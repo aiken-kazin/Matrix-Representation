@@ -23,7 +23,7 @@ Do[
  {Length[Basis]}
  ]
  
-Mat = {}; (*Create our matrix representation of group eleent*)
+Mat = {}; (*Create our matrix representation of group element*)
 For[ i = 0, i < Length[ind], i++;
  M1 = M;
  M1[[ind[[i]]]] = 1;
