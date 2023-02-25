@@ -1,7 +1,8 @@
+(*From Aiken Kazin 25.02.2023*)
 (*This part of the code calculates Matrix Representation
 of an elements of the Symmetrix group in the basis 
 of the Vector space CSn/ 
-/we call that representation - by defining representation*)
+/we call that representation - by defining representation*) 
 
 n = 3;
 group = PermutationGroup[Permutations[Range[n]]];
