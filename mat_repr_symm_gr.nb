@@ -1,0 +1,31 @@
+(*This part of the code calculates Matrix Representation
+of an elements of the Symmetrix group in the basis 
+of the Vector space CSn/ 
+/we call that representation - by defining representation*)
+
+n = 3;
+group = PermutationGroup[Permutations[Range[n]]];
+e1 = Cycles[{{1,3,2}}];
+Sn = GroupElements[group];
+Basis = Sn;
+
+ind = {}; (*Find the index of ones in each column*)
+For[i = 1, i <= Length[Sn], i++,
+ v = PermutationProduct[Basis[[i]], e1];
+ p = Position[Basis, v][[1]][[1]];
+ ind = Append[ind, p]; 
+ ];
+ 
+M = {}; (* Creat zero list with lenghts=Len(Basis) *)
+Do[
+ M = Append[M, 0],
+ {Length[Basis]}
+ ]
+ 
+Mat = {}; (*Create our matrix representation of group eleent*)
+For[ i = 0, i < Length[ind], i++;
+ M1 = M;
+ M1[[ind[[i]]]] = 1;
+Mat = Append[Mat, M1];
+ ]
+Print[MatrixForm[Transpose[Mat]]]
