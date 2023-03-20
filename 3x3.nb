@@ -1,0 +1,6 @@
+aa = {a, b, c};
+pp = Permutations[aa]
+res = Table[
+   Normal[SparseArray[# -> 1 & /@ 
+      Table[{j, Position[pp[[k]], aa[[j]]][[1, 1]]}, {j, 1, Length[aa]}]]], {k, 1, Length[pp]}];
+MatrixForm /@ res
