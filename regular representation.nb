@@ -1,0 +1,22 @@
+n = 3;
+ge = Permutations[Range[n]];  (* the elements of S3  *)
+
+(* Multiplication of group-elements *)
+gp[a_, b_] := Module[{},
+gL = Length[a];
+Table[a[[b[[j]]]], {j, 1, gL}]]
+
+(* Make Matrix for regular representation *)
+gm[a_] := Module[{},
+  gLg = Length[ge];
+  mm = Table[0, {i, gLg}, {j, gLg}];
+  j = 1;
+  While[
+   j <= gLg,
+   gxg = gp[a, ge[[j]]];
+   mm[[j, Position[ge, gxg][[1, 1]]]] = 1;
+   j = j + 1
+   ];
+  mm
+  ]
+  MatrixForm /@ (gm /@ ge)
